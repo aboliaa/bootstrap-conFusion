@@ -231,6 +231,10 @@
 					<a class="carousel-control-next" href="#mycarousel" role=="button" data-slide="next">
 						<span class="carousel-control-next-icon"></span>
 					</a>
+					
+					<button class="btn btn-danger btm-sm" id="carousel-button">
+						<span class="fa fa-pause"></span>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -331,6 +335,23 @@
     <script src="node_modules/tether/dist/js/tether.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	
+	<script>
+		$(document).ready(function(){
+			$("#mycarousel").carousel({interval:1000});
+			$("#carousel-button").click(function(){
+				if ($("#carousel-button").children("span").hasClass("fa-pause")){
+					$("#mycarousel").carousel("pause");
+					$("#carousel-button").children("span").addClass("fa-play");
+					$("#carousel-button").children("span").removeClass("fa-pause");
+				}
+				else{
+					$("#mycarousel").carousel("cycle");
+					$("#carousel-button").children("span").addClass("fa-pause");
+					$("#carousel-button").children("span").removeClass("fa-play");
+				}
+			});
+		});
+	</script>
 </body>
 
 </html>
