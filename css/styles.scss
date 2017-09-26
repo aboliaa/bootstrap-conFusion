@@ -1,14 +1,14 @@
 $lt-gray: #ddd;
-$background-dark: #512DAB;
+$background-dark: #512DA8;
 $background-light: #9575CD;
 $background-pale: #D1C4E9;
-
-//Height variables
+$modal-Header:floralwhite;
+$modal-button:floralwhite;
+// Height variables
 $carousel-item-height: 300px;
-
-@mixin zero-margin ($pad-up-down, $pad-left-right){
-	margin: 0px auto;
-	padding: $pad-up-down $pad-left-right;
+@mixin zero-margin($pad-up-dn, $pad-left-right) {
+	margin:0px auto;
+	padding: $pad-up-dn $pad-left-right;
 }
 
 .row-header{
@@ -51,39 +51,25 @@ body{
     border-bottom: 1px solid $lt-gray;
     padding: 10px;
 }
+.carousel {
+    background:$background-dark;
 
-.carousel{
-	background: $background-dark;
-	
-	.carousel-item{
-		height: $carousel-item-height;
+    .carousel-item {
+        height: $carousel-item-height;
         img {
             position: absolute;
             top: 0;
             left: 0;
             min-height: 300px;
         }
-	}
+    }
 }
-
 #carousel-button {
     right:0px;
     position: absolute;
     bottom: 0px;
 }
-
-.modal-footer{
-    background: $background-light;
-}
-
-.modal-body{
-    background: $background-pale;
-}
-
-.modal-header{
-    background: $background-dark;
-    color:floralwhite;
-	.close{
-		color: floralwhite;
-	}
-}
+.modal-header{background-color: $modal-Header;
+.close{background-color:$modal-button;}
+.modal-body{background-color:palegreen}
+.modal-foot{background-color:lightblue;}
